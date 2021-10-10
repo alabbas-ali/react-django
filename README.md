@@ -211,3 +211,16 @@ urlpatterns = [
 ```
 
 Output
+
+
+## Deployment
+
+Just run npm build and it will bundle an optimized React application into the build folder.
+
+Now you only need to run python manage.py runserver to run the entire app.
+
+Now technically you are just using a Django application. But who knows that you have created your full frontend in React JS. 😎
+
+To follow full deployment to the server (which is easiest in Heroku), check this out Heroku Django app deployment.
+
+But I recommend don’t just depend on Heroku, try to learn the concept behind it, don’t just copy-paste the commands.
