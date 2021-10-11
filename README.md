@@ -123,8 +123,6 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ```
 
-You already know what views are, right? No?? what are you doing here then?
-
 Edit views.py in accounts
 
 ```
