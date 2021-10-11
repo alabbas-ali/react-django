@@ -166,8 +166,8 @@ urlpatterns = [
 ]
 ```
 
-- In ./djreact (main) project folder
-Create views.py in djreact (main)
+- In ./backend (main) project folder
+Create views.py in backend (main)
 NOTE: You can change “build” to “public” in the development, for that you need to have webpack.config.js and .babelrcconfigured to convert all the src code in one js file.
 Read more about webpack and babel
 
