@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     'corsheaders',
     
     # My apps
-    'accounts.app.AccountsConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 # (DRF Authentication Scheme) 
@@ -137,19 +137,19 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     # it takes recent instance from serialzer and uses `make_password` to encrypt
     def perform_create(self, serializer):
-    # Hash password but passwords are not required
-    if ('password' in self.request.data):
-        password = make_password(self.request.data['password'])
-        serializer.save(password=password)
-    else:
-        serializer.save()
-def perform_update(self, serializer):
-    # Hash password but passwords are not required
-    if ('password' in self.request.data):
-        password = make_password(self.request.data['password'])
-        serializer.save(password=password)
-    else:
-        serializer.save()
+        # Hash password but passwords are not required
+        if ('password' in self.request.data):
+            password = make_password(self.request.data['password'])
+            serializer.save(password=password)
+        else:
+            serializer.save()
+    def perform_update(self, serializer):
+        # Hash password but passwords are not required
+        if ('password' in self.request.data):
+            password = make_password(self.request.data['password'])
+            serializer.save(password=password)
+        else:
+            serializer.save()
 ```
 
 Edit urls.py in accounts
@@ -166,8 +166,8 @@ urlpatterns = [
 ]
 ```
 
-- In ./backend (main) project folder
-Create views.py in backend (main)
+- In `./backend` (main) project folder
+Create views.py in `backend` (main)
 NOTE: You can change “build” to “public” in the development, for that you need to have webpack.config.js and .babelrcconfigured to convert all the src code in one js file.
 Read more about webpack and babel
 
@@ -177,7 +177,7 @@ def index(request):
     return render(request, 'build/index.html')
 ```
 
-- Edit urls.py in djreact (main)
+- Edit urls.py in `backend` (main)
 
 Finally all the URLs (from other apps are included in this main one)
 
